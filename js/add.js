@@ -7,8 +7,21 @@ botaoAdicionar.addEventListener("click",function (event) {
   var maquina = obtemMaquinaDoFormulario(form);
 
   adicionaMaquinaNaTabela(maquina);
+  
+
 
 });
+
+function adicionaNoBando(maquina) {
+    var transaction = db.transaction("maquina", "readwrite");
+    var objectStore = transaction.objectStore("maquina");
+    var request = objectStore.add({ name:name, status:status });
+    request.onsuccess = function (event) {
+      // do something after the add succeeded
+      console.log("done with insert");
+    };
+}
+
 
 function adicionaMaquinaNaTabela(maquina) {
   var maquinaTr = montaTr(maquina);
@@ -20,7 +33,17 @@ function adicionaMaquinaNaTabela(maquina) {
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+
+    var numero = Math.floor(Math.random() * (max - min)) + min;
+
+    if(numero == 0){
+       return "Inativo";
+
+    }else if(numero == 1){
+        return "Ativo";
+    }else{
+      return "Quebrado";
+    }
 }
 
 function obtemMaquinaDoFormulario(form){
@@ -28,10 +51,14 @@ function obtemMaquinaDoFormulario(form){
   var maquina ={
       //caracteristicas
       nome:form.nome.value,
-      status:getRandomInt(0, 1)
+      status: getRandomInt(0, 3)
+
   }
+  console.log(maquina.nome+" "+maquina.status);
   return maquina;
 }
+
+
 
 function montaTr(maquina){
   var maquinaTr= document.createElement("tr");

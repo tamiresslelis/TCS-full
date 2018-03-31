@@ -33,19 +33,10 @@ var db;
     }
 
     function contentLoaded() {
-    initDb();
+        initDb();
+        adicionaNoBando(maquina);
 
-    btnAdd.addEventListener("click", function () {
 
 
-        var transaction = db.transaction("maquina", "readwrite");
-        var objectStore = transaction.objectStore("maquina");
-        var request = objectStore.add({ name:name, status:status });
-        request.onsuccess = function (event) {
-                    // do something after the add succeeded
-                            console.log("done with insert");
-        };
-    }, false);
-
-}
+    }
 });
