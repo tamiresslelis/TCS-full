@@ -13,7 +13,7 @@ botaoAdicionar.addEventListener("click",function (event) {
 
 function adicionaMaquinaNaTabela(maquina) {
   var maquinaTr = montaTr(maquina);
-  var tabela = document.querySelector("#tabela-maquina");
+  var tabela = document.querySelector("#tabela-maquinas");
   //tras o tr para dentro da tabela
   tabela.appendChild(maquinaTr);
 }
