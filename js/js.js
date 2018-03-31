@@ -10,7 +10,7 @@ var db;
         { name: "Máquina de Lavar", status: "1"  },
         { name: "Máquina 2", status: "2" }
     ];
-    
+
       let initDb = () => {
       let request = indexedDB.open("database", 1);
 
@@ -30,7 +30,21 @@ var db;
               objectStore.add(maquinaData[i]);
           }
       };
+    }
 
+    function contentLoaded() {
+    initDb();
 
-      }
-}
+    btnAdd.addEventListener("click", function () {
+        
+
+        var transaction = db.transaction("maquina", "readwrite");
+        var objectStore = transaction.objectStore("maquina");
+        var request = objectStore.add({ name:name, status:status });
+        request.onsuccess = function (event) {
+                    // do something after the add succeeded
+                            console.log("done with insert");
+        };
+    }, false);
+
+})

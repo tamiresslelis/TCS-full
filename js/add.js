@@ -9,14 +9,7 @@ botaoAdicionar.addEventListener("click",function (event) {
 
   adicionaMaquinaNaTabela(maquina);
 
-  var transaction = db.transaction("people", "readwrite");
-  var objectStore = transaction.objectStore("people");
-  var request = objectStore.add({ name:name, email: email });
-  request.onsuccess = function (evt) {
-      // do something after the add succeeded
-      console.log("done with insert");
-  };
-}, false);
+
 
 });
 
@@ -27,15 +20,18 @@ function adicionaMaquinaNaTabela(maquina) {
   tabela.appendChild(maquinaTr);
 }
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 function obtemMaquinaDoFormulario(form){
 
   var maquina ={
       //caracteristicas
       nome:form.nome.value,
-      status:function getRandomArbitrary(1, 4) {
-        return Math.random() * (4 - 1) + 1;
-      }
+      status:getRandomInt(0, 1);
   }
   return maquina;
 }
