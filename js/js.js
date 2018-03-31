@@ -10,7 +10,7 @@ var db;
         { name: "Máquina de Lavar", status: "1"  },
         { name: "Máquina 2", status: "2" }
     ];
-    
+
       let initDb = () => {
       let request = indexedDB.open("database", 1);
 
@@ -33,4 +33,4 @@ var db;
 
 
       }
-}
+})

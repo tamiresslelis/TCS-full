@@ -12,30 +12,33 @@ botaoAdicionar.addEventListener("click",function (event) {
   var transaction = db.transaction("maquina", "readwrite");
   var objectStore = transaction.objectStore("maquina");
   var request = objectStore.add({ name:name, status: status });
-  request.onsuccess = function (evt) {
+  request.onsuccess = function (event) {
       // do something after the add succeeded
       console.log("done with insert");
   };
 }, false);
 
-});
+
 
 function adicionaMaquinaNaTabela(maquina) {
   var maquinaTr = montaTr(maquina);
-  var tabela = document.querySelector("#tabela-maquina");
+  var tabela = document.querySelector("#tabela-maquinas");
   //tras o tr para dentro da tabela
   tabela.appendChild(maquinaTr);
 }
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 
 function obtemMaquinaDoFormulario(form){
 
   var maquina ={
       //caracteristicas
       nome:form.nome.value,
-      status:function getRandomArbitrary(1, 4) {
-        return Math.random() * (4 - 1) + 1;
-      }
+      status:getRandomInt(0, 1)
   }
   return maquina;
 }
