@@ -9,8 +9,6 @@ botaoAdicionar.addEventListener("click",function (event) {
 
   adicionaMaquinaNaTabela(maquina);
 
-
-
 });
 
 function adicionaMaquinaNaTabela(maquina) {
@@ -31,7 +29,7 @@ function obtemMaquinaDoFormulario(form){
   var maquina ={
       //caracteristicas
       nome:form.nome.value,
-      status:getRandomInt(0, 1);
+      status:getRandomInt(0, 1)
   }
   return maquina;
 }

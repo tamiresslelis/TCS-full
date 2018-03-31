@@ -36,7 +36,7 @@ var db;
     initDb();
 
     btnAdd.addEventListener("click", function () {
-        
+
 
         var transaction = db.transaction("maquina", "readwrite");
         var objectStore = transaction.objectStore("maquina");
@@ -47,4 +47,5 @@ var db;
         };
     }, false);
 
-})
+}
+});
