@@ -30,7 +30,7 @@ function obtemMaquinaDoFormulario(form){
       nome:form.nome.value,
       status:getRandomInt(0, 1)
   }
-  
+
   return maquina;
 }
 
