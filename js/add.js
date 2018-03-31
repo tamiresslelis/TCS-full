@@ -5,7 +5,6 @@ botaoAdicionar.addEventListener("click",function (event) {
   var form = document.querySelector("#form-adiciona");
 
   var maquina = obtemMaquinaDoFormulario(form);
-  //cria a tr a td do paciente
 
   adicionaMaquinaNaTabela(maquina);
 
