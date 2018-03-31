@@ -20,7 +20,7 @@ var db;
 
       request.onupgradeneeded = (event) => {
 
-          let objectStore = event.currentTarget.result.createObjectStore(
+          var objectStore = event.currentTarget.result.createObjectStore(
                    "maquina", { keyPath: "id", autoIncrement: true });
 
           objectStore.createIndex("name", "name", { unique: false });
@@ -29,8 +29,30 @@ var db;
           for (i in maquinaData) {
               objectStore.add(maquinaData[i]);
           }
-      };
-
-
+        };
       }
+
+      function contentLoaded() {
+                initDb();
+                
+
+                btnAdd.addEventListener("click", function () {
+                    var name = document.getElementById("txtName").value;
+                    var email = document.getElementById("txtEmail").value;
+
+                    var transaction = db.transaction("people", "readwrite");
+                    var objectStore = transaction.objectStore("people");
+                    var request = objectStore.add({ name:name, email: email });
+                    request.onsuccess = function (evt) {
+                        // do something after the add succeeded
+                        console.log("done with insert");
+                    };
+                }, false);
+
+
+
+
+
+            }
+
 })

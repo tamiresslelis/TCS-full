@@ -6,19 +6,9 @@ botaoAdicionar.addEventListener("click",function (event) {
 
   var maquina = obtemMaquinaDoFormulario(form);
   //cria a tr a td do paciente
-
   adicionaMaquinaNaTabela(maquina);
-
-  var transaction = db.transaction("maquina", "readwrite");
-  var objectStore = transaction.objectStore("maquina");
-  var request = objectStore.add({ name:name, status: status });
-  request.onsuccess = function (event) {
-      // do something after the add succeeded
-      console.log("done with insert");
-  };
-}, false);
-
-
+  
+});
 
 function adicionaMaquinaNaTabela(maquina) {
   var maquinaTr = montaTr(maquina);
@@ -31,7 +21,7 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
-  }
+}
 
 function obtemMaquinaDoFormulario(form){
 
