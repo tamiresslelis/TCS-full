@@ -9,9 +9,9 @@ botaoAdicionar.addEventListener("click",function (event) {
 
   adicionaMaquinaNaTabela(maquina);
 
-  var transaction = db.transaction("people", "readwrite");
-  var objectStore = transaction.objectStore("people");
-  var request = objectStore.add({ name:name, email: email });
+  var transaction = db.transaction("maquina", "readwrite");
+  var objectStore = transaction.objectStore("maquina");
+  var request = objectStore.add({ name:name, status: status });
   request.onsuccess = function (evt) {
       // do something after the add succeeded
       console.log("done with insert");
