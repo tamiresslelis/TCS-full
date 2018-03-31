@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Máquinas</title>
+
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<span> <img class="logo" src="logo.png" alt="TCS logo" /></span>
+				<span><h1 class="titulo">Seleção TCS</h1></span>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>Máquinas cadastradas</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Status</th>
+
+						</tr>
+					</thead>
+					<tbody id="tabela-maquinas">
+						<tr class="maquinas" id="primeira-maquina" >
+							<td class="info-nome"> Máquina de costura</td>
+							<td class="info-status">Ativo</td>
+							<td class="info-edit"><button id="edit-maquina" class="botao bto-principal">Editar</button></td>
+							<td class="info-delet"><button id="delet-maquina" class="botao bto-principal">Deletar</button></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</section>
+			<section class="container">
+    <h2 id="titulo-form">Adicionar nova Máquina</h2>
+
+    <form id="form-adiciona">
+        <div class="grupo">
+            <label for="nome">Nome:</label>
+            <input id="nome" name="nome" type="text" placeholder="digite o nome da máquina" class="campo">
+        </div>
+
+        <button id="adicionar-maquina" class="botao bto-principal">Adicionar</button>
+    </form>
+</section>
+		</main>
+
+		<script src="js/js.js"></script>
+		<script src="js/add.js"></script>
+	</body>
+</html>
