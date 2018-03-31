@@ -7,7 +7,7 @@ botaoAdicionar.addEventListener("click",function (event) {
   var maquina = obtemMaquinaDoFormulario(form);
   //cria a tr a td do paciente
   adicionaMaquinaNaTabela(maquina);
-  
+
 });
 
 function adicionaMaquinaNaTabela(maquina) {
@@ -30,6 +30,7 @@ function obtemMaquinaDoFormulario(form){
       nome:form.nome.value,
       status:getRandomInt(0, 1)
   }
+  
   return maquina;
 }
 
