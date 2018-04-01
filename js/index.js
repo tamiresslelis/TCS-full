@@ -14,7 +14,7 @@ var db;
       let initDb = () => {
       let request = indexedDB.open("database", 1);
 
-      request.onerror = (event) =>{ console.log("IndexedDB error: " + evt.target.errorCode);};
+      request.onerror = (event) =>{ console.log("IndexedDB error: " + event.target.errorCode);};
 
       request.onsuccess = (event) => { db = request.result; };
 
@@ -31,13 +31,10 @@ var db;
           }
       };
     }
-
     function contentLoaded() {
         initDb();
         adicionaNoBanco(maquina);
         deletarDoBanco(maquina);
-
-
 
     }
 });
