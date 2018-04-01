@@ -8,11 +8,9 @@ botaoAdicionar.addEventListener("click",function (event) {
 
   adicionaMaquinaNaTabela(maquina);
 
-
-
 });
 
-function adicionaNoBando(maquina) {
+function adicionaNoBanco(maquina) {
     var transaction = db.transaction("maquina", "readwrite");
     var objectStore = transaction.objectStore("maquina");
     var request = objectStore.add({ name:name, status:status });

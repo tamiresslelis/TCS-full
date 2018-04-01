@@ -18,6 +18,10 @@
 		<main>
 			<section class="container">
 				<h2>Máquinas cadastradas</h2>
+
+				<label for="filtrar-tabela">Filtro:</label>
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome da máquina">
+
 				<table>
 					<thead>
 						<tr>
@@ -30,6 +34,13 @@
 						<tr class="maquinas" id="primeira-maquina" >
 							<td class="info-nome"> Máquina de costura</td>
 							<td class="info-status">Ativo</td>
+							<td class="info-edit"><button id="edit-maquina" class="botao bto-principal">Editar</button></td>
+							<td class="info-delet"><button id="delet-maquina" class="botao bto-principal">Deletar</button></td>
+						</tr>
+
+						<tr class="maquinas" id="primeira-maquina" >
+							<td class="info-nome"> Máquina 2</td>
+							<td class="info-status">Quebrado</td>
 							<td class="info-edit"><button id="edit-maquina" class="botao bto-principal">Editar</button></td>
 							<td class="info-delet"><button id="delet-maquina" class="botao bto-principal">Deletar</button></td>
 						</tr>
@@ -51,7 +62,9 @@
 </section>
 		</main>
 
-		<script src="js/js.js"></script>
+		<script src="js/index.js"></script>
 		<script src="js/add.js"></script>
+		<script src="js/filtra.js"></script>
+		<script src="js/delete.js"></script>
 	</body>
 </html>

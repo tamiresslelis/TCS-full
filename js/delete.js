@@ -1,19 +1,17 @@
-var botaoAdicionar = document.querySelector('#delet-maquina');
-botaoAdicionar.addEventListener("click",function (event) {
+var botaoDeletar = document.querySelector('#delet-maquina');
+
+botaoDeletar.addEventListener("click",function (event) {
   event.preventDefault();
+  console.log("Delete");
+  var name = String(document.getElementById("filtrar-tabela").value);
+  deletarDoBanco(name);
+});
 
-  var name = String(document.getElementById("txtID").value);
-
-  var transaction = db.transaction("people", "readwrite");
-  var objectStore = transaction.objectStore("people");
-  var request = objectStore.delete(id);
-  request.onsuccess = function(evt) {
+function deletarDoBanco(maquina) {
+  var transaction = db.transaction("maquina", "readwrite");
+  var objectStore = transaction.objectStore("maquina");
+  var request = objectStore.delete(name);
+  request.onsuccess = function(event) {
       // It's gone!
   };
-  }, false);
-
-
-
-
-
-});
+}

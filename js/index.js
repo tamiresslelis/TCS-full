@@ -34,7 +34,8 @@ var db;
 
     function contentLoaded() {
         initDb();
-        adicionaNoBando(maquina);
+        adicionaNoBanco(maquina);
+        deletarDoBanco(maquina);
 
 
 
