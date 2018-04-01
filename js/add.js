@@ -7,7 +7,7 @@ botaoAdicionar.addEventListener("click",function (event) {
   var maquina = obtemMaquinaDoFormulario(form);
 
   adicionaMaquinaNaTabela(maquina);
-  
+
 
 
 });
