@@ -140,6 +140,11 @@ button[disabled=disabled], button:disabled {
     margin-top: 30px;
 }
 
+#nome{
+	width: 200px;
+	height:35px;
+	margin-bottom: 10px;
+}
 
 #mensagens-erro{
 	color:red;
