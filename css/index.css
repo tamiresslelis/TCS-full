@@ -147,3 +147,20 @@ button[disabled=disabled], button:disabled {
 	opacity: 0;
 	transition: 0.5s;
 }
+footer{
+	margin: 0 auto;
+	text-align: center;
+	width: 60%;
+	height: 70px;
+	border-top: 1px solid #ccc;
+
+}
+footer h2,a{
+	text-decoration: none;
+	padding-top: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	color: blue;
+
+
+}
