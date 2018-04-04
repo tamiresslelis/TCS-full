@@ -86,9 +86,11 @@ th{
 	border: 0;
 }
 label{
-	color: #555;
+	color:black;
 	display: block;
 	margin-bottom: .2em;
+	font-size: 15px;
+	font-weight: bold;
 }
 
 
@@ -138,6 +140,11 @@ button[disabled=disabled], button:disabled {
     margin-top: 30px;
 }
 
+#nome{
+	width: 200px;
+	height:35px;
+	margin-bottom: 10px;
+}
 
 #mensagens-erro{
 	color:red;
@@ -147,6 +154,18 @@ button[disabled=disabled], button:disabled {
 	opacity: 0;
 	transition: 0.5s;
 }
+
+
+#filtrar-tabela{
+	width: 200px;
+	height:35px;
+	margin-bottom: 10px;
+}
+
+.invisivel{
+	display: none;
+}
+
 footer{
 	margin: 0 auto;
 	text-align: center;
